@@ -1,9 +1,8 @@
 
 soma = 0
-x = int(input('seu número binário'))
-a = list(str(x))
-for k in range(0,len(str(x))):
-    if a[k] == '1':
+x = input('seu número binário')
+for k in range(0,len(x)):
+    if x[k] == '1':
         convertion = 1
     else:
         convertion = 0
