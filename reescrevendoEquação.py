@@ -40,9 +40,7 @@ def dANDr(x):
         x2 = (-b-(delta**(1/2)))/(2*a)
         return f'{a}({letters[0]}-({round(x1,2)}))*({letters[0]}-({round(x2,2)}))'
     #detectando que é quadrado da diferença,x²-a
-    if len(letters) == 1 and len(misc) == 1 and len(numberscount) == 1 and (int(numberscount[0]) ** (1/2)) % 1 == 0:
-        if a > 0:
-            return x
+    if len(letters) == 1 and len(misc) == 1 and len(numberscount) == 1 and (int(numberscount[0]) ** (1/2)) % 1 == 0 and a > 0:
         return f'({letters[0]}+{(-a)**(1/2)}) * ({letters[0]}-{(-a)**(1/2)})'
     #detectando que é produto notável,(x+a)²
     if len(letters) == 1 and len(misc) == 3 and len(numberscount) == 1:
