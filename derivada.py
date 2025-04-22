@@ -23,7 +23,7 @@ for termo in expressao:
         letra.append(termo)
 if not letra:
     print(0)
-elif elevados[0] != 1:
+elif elevados:
     print(str(digitos) + ''.join(letra) + ''.join(elevados))
-elif elevados[0] == 1:
+elif not elevados:
     print(digitos)
