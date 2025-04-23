@@ -5,13 +5,17 @@ def elevado(x):
     elif ord(x) == 178:
         return 185
     return 1
+digito = ''
+switch = 0
 digitos = 1
 elevados = []
 letra = []
 expressao = input('qual expressão você vai converter para sua derivada?')
 for termo in expressao:
-    if ord(termo) in range(48,58):
-        digitos *= int(termo)
+    if ord(termo) in range(48,58) and switch == 0:
+        digito += termo
+        switch = 1
+        continue
     elif ord(termo) in (179,178,185):
         elevados.append(chr(elevado(termo)))
         if termo != '¹':
@@ -19,8 +23,17 @@ for termo in expressao:
         else:
             digitos *= 1
     elif termo.isalpha():
-
         letra.append(termo)
+    if ord(termo) in range(48,58) and switch == 1:
+        digito += termo
+        print(digito)
+        digitos *= int(digito)
+        switch = 0
+        digito = ''
+    elif switch == 1:
+        digitos *= int(digito)
+        switch = 0
+        
 if not letra:
     print(0)
 elif elevados:
