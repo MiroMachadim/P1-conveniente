@@ -33,6 +33,7 @@ for termo in expressao:
     elif switch == 1:
         digitos *= int(digito)
         switch = 0
+        digito = ''
         
 if not letra:
     print(0)
